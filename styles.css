@@ -355,7 +355,7 @@
     }
     @media (max-width: 760px) {
       .shell { width: min(100% - 32px, 620px); }
-      .tab-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+      .tab-nav { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
       .tab-button { width: 100%; font-size: .74rem; }
       .home-grid { grid-template-columns: 1fr; }
       .portrait-stage { min-height: 570px; }
@@ -975,4 +975,26 @@
     @media (max-width: 520px) {
       .home-band { padding-top: 32px; }
       .home-profile { padding-top: 26px; }
+    }
+
+    /* Kid-Friendly Eats: map, area jump links, and spot cards (theme tokens so dark mode reads) */
+    .spot-map { height: 360px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); margin: clamp(28px, 4vw, 44px) 0 0; background: var(--surface); z-index: 0; }
+    .area-jump-nav { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin: 26px 0 6px; font-size: .85rem; }
+    .area-jump-label { font-weight: 700; color: var(--headline); margin-right: 2px; }
+    .area-jump-nav a { display: inline-block; padding: 6px 12px; border-radius: 999px; background: var(--surface); color: var(--headline); text-decoration: none; font-weight: 600; }
+    .area-jump-nav a:hover, .area-jump-nav a:focus-visible { background: var(--surface-strong); color: var(--ink); }
+    .spot-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 36px 44px; padding-bottom: 70px; }
+    .area-header { grid-column: 1 / -1; font-size: 1.9rem; margin: 28px 0 -12px; color: var(--headline); scroll-margin-top: 90px; }
+    .spot-photo { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; margin-bottom: 14px; display: block; background: var(--surface); }
+    .spot h3 { margin: 0 0 6px; font-size: 1.4rem; letter-spacing: -.01em; }
+    .spot h3 a { color: inherit; text-decoration: none; }
+    .spot h3 a:hover, .spot h3 a:focus-visible { color: var(--coral-dark); text-decoration: underline; }
+    .spot-meta { margin: 0 0 8px; color: var(--coral-dark); font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .spot > p:last-child { color: var(--muted); margin: 0; }
+    @media (max-width: 760px) {
+      .spot-map { height: 300px; }
+      .spot-list { gap: 30px; }
+    }
+    @media (max-width: 520px) {
+      .area-header { scroll-margin-top: 130px; }
     }

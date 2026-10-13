@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700&family=Parisienne&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="images/img-01.webp" fetchpriority="high">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,6 +31,7 @@
     <nav class="shell tab-nav" role="tablist" aria-label="Explore the site">
       <button class="tab-button" type="button" role="tab" aria-selected="true" aria-controls="home" data-tab="home">Home</button>
       <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="media-kit" data-tab="media-kit">Media kit</button>
+      <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="eats" data-tab="eats">Kid-Friendly Eats</button>
       <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="travel" data-tab="travel">Travel</button>
       <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="recipes" data-tab="recipes">Recipes</button>
     </nav>
@@ -246,6 +248,585 @@
       </div>
     </section>
 
+    <section class="tab-panel" id="eats" role="tabpanel" hidden>
+      <div class="shell">
+        <div class="spot-map" id="map-eats" role="region" aria-label="Map of kid-friendly eats"></div>
+        <nav class="area-jump-nav" aria-label="Jump to an area">
+          <span class="area-jump-label">Jump to:</span>
+          <a href="#area-cedar-park">Cedar Park</a>
+          <a href="#area-leander">Leander</a>
+          <a href="#area-round-rock">Round Rock</a>
+          <a href="#area-georgetown">Georgetown</a>
+          <a href="#area-liberty-hill">Liberty Hill</a>
+          <a href="#area-north-austin">North Austin</a>
+          <a href="#area-central-austin">Central Austin</a>
+          <a href="#area-south-austin">South Austin</a>
+          <a href="#area-dripping-springs">Dripping Springs</a>
+          <a href="#area-lakeway-area">Lakeway Area</a>
+          <a href="#area-more-areas">More Areas</a>
+        </nav>
+        <div class="spot-list">
+          <h3 class="area-header" id="area-cedar-park">Cedar Park</h3>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/peached-tortilla.webp" alt="The Peached Tortilla" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://thepeachedtortilla.com/cedar-park" target="_blank" rel="noopener">The Peached Tortilla</a></h3>
+            <p class="spot-meta">Cedar Park</p>
+            <p>Asian-Southern fusion with "The Backyard" playscape.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/five-four.webp" alt="Five Four Restaurant & Drafthouse" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.54thstreetrestaurants.com/cedar-park-tx.html" target="_blank" rel="noopener">Five Four Restaurant & Drafthouse</a></h3>
+            <p class="spot-meta">Cedar Park</p>
+            <p>Cornhole on turf at this gastropub.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/la-dosi-coffee.webp" alt="La Dosis Coffee" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://ladosiscoffee.com/" target="_blank" rel="noopener">La Dosis Coffee</a></h3>
+            <p class="spot-meta">Cedar Park</p>
+            <p>Big bouncy net for kids to jump on.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/mandolas.webp" alt="Mandola's Italian Kitchen" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://mandolas.com/" target="_blank" rel="noopener">Mandola's Italian Kitchen</a></h3>
+            <p class="spot-meta">Cedar Park</p>
+            <p>Italian spot with a playground right by the patio.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/the-all-good.webp" alt="The All Good" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://theallgoodbar.com/" target="_blank" rel="noopener">The All Good</a></h3>
+            <p class="spot-meta">Cedar Park</p>
+            <p>Bar with a fenced turf yard for kids to play and a burger food truck out back.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/the-good-lot.webp" alt="The Good Lot" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.thegoodlotcp.com/" target="_blank" rel="noopener">The Good Lot</a></h3>
+            <p class="spot-meta">Cedar Park</p>
+            <p>Beer garden with food trucks and a kids play area.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/cedar-pork.webp" alt="Cedar Pork" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.cedarpork.com/" target="_blank" rel="noopener">Cedar Pork</a></h3>
+            <p class="spot-meta">Cedar Park</p>
+            <p>BBQ and tacos at the Brushy Creek Food Park with lots of room for kids to run.</p>
+          </article>
+          <h3 class="area-header" id="area-leander">Leander</h3>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/leander-trucking-co.webp" alt="Leander Trucking Company" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.google.com/maps/search/?api=1&query=Leander+Trucking+Company%2C+Leander%2C+TX" target="_blank" rel="noopener">Leander Trucking Company</a></h3>
+            <p class="spot-meta">Leander</p>
+            <p>Food truck park on Bagdad with a playground for the kids.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/mcdonalds-leander.webp" alt="McDonald's (Leander)" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.google.com/maps/search/?api=1&query=McDonald%27s+%28Leander%29%2C+Leander%2C+TX" target="_blank" rel="noopener">McDonald's (Leander)</a></h3>
+            <p class="spot-meta">Leander</p>
+            <p>Indoor PlayPlace with tables right in the play area. Cheap, fast, and perfect when you need an indoor play break.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/nameless-saloon.webp" alt="Nameless Saloon" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.namelesssaloon.com/" target="_blank" rel="noopener">Nameless Saloon</a></h3>
+            <p class="spot-meta">Leander</p>
+            <p>Pickleball, food trucks, and live music.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/fieldhouse-crossover.webp" alt="The Fieldhouse at the Crossover" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.thefieldhousetexas.com/" target="_blank" rel="noopener">The Fieldhouse at the Crossover</a></h3>
+            <p class="spot-meta">Leander</p>
+            <p>Playground, pickleball, sand volleyball, and food trucks.</p>
+          </article>
+          <h3 class="area-header" id="area-round-rock">Round Rock</h3>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/kerbey-lane.webp" alt="Kerbey Lane Cafe" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.kerbeylanecafe.com/locations/round-rock" target="_blank" rel="noopener">Kerbey Lane Cafe</a></h3>
+            <p class="spot-meta">Round Rock</p>
+            <p>Playground right off the patio.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/backporch-social.webp" alt="Backporch Social" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://backporchsocial.com/" target="_blank" rel="noopener">Backporch Social</a></h3>
+            <p class="spot-meta">Round Rock</p>
+            <p>Family-friendly bar with outdoor lawn games and big screens for sports.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/mighty-fine.webp" alt="Mighty Fine Burgers" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.mightyfineburgers.com/round-rock" target="_blank" rel="noopener">Mighty Fine Burgers</a></h3>
+            <p class="spot-meta">Round Rock</p>
+            <p>Shared patio playground with neighboring restaurants.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/salt-lick-rr.webp" alt="Salt Lick BBQ" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://saltlickbbq.com/round-rock/" target="_blank" rel="noopener">Salt Lick BBQ</a></h3>
+            <p class="spot-meta">Round Rock</p>
+            <p>Playground next to Dell Diamond.</p>
+          </article>
+          <h3 class="area-header" id="area-georgetown">Georgetown</h3>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/309-coffee.webp" alt="309 Coffee" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://309.coffee/" target="_blank" rel="noopener">309 Coffee</a></h3>
+            <p class="spot-meta">Georgetown</p>
+            <p>Climbing dome in the backyard.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/family-barn.webp" alt="Family Barn" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://familyplaybarn.com/" target="_blank" rel="noopener">Family Barn</a></h3>
+            <p class="spot-meta">Georgetown</p>
+            <p>Coffee while your kiddos play.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/south-fork-brew.webp" alt="Tasty Trails" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.tastytrails.food/" target="_blank" rel="noopener">Tasty Trails</a></h3>
+            <p class="spot-meta">Georgetown</p>
+            <p>Food truck park with a playground, beer, and a live music stage. Formerly South Fork Fun Food and Brew.</p>
+          </article>
+          <h3 class="area-header" id="area-liberty-hill">Liberty Hill</h3>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/agape-bbq.webp" alt="Agape BBQ" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.agapebbq.com/" target="_blank" rel="noopener">Agape BBQ</a></h3>
+            <p class="spot-meta">Liberty Hill</p>
+            <p>Backyard BBQ with a sandbox, live music, and room to roam.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/dahlia-cafe.webp" alt="Dahlia Cafe" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://dahliacafe.com/" target="_blank" rel="noopener">Dahlia Cafe</a></h3>
+            <p class="spot-meta">Liberty Hill</p>
+            <p>Homestyle cooking with a big playground and live music.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/liberty-hill-beer-market.webp" alt="Liberty Hill Beer Market" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.beermarket512.com/" target="_blank" rel="noopener">Liberty Hill Beer Market</a></h3>
+            <p class="spot-meta">Liberty Hill</p>
+            <p>Beer garden with Italian fare, a playground, and live music.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/liberty-tavern.webp" alt="Liberty Tavern" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://libertytavern.co/" target="_blank" rel="noopener">Liberty Tavern</a></h3>
+            <p class="spot-meta">Liberty Hill</p>
+            <p>Chicken fried chicken and fried pickles.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/thirsty-penguin.webp" alt="Taqueria Mi Ranchito Jaimes / Thirsty Penguin" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.instagram.com/taqueriamrj" target="_blank" rel="noopener">Taqueria Mi Ranchito Jaimes / Thirsty Penguin</a></h3>
+            <p class="spot-meta">Liberty Hill</p>
+            <p>Taqueria with a playground, outdoor eating area, food truck, and daiquiri drive-thru.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/forrest-coffee.webp" alt="Forrest Coffee" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://forrest.coffee/" target="_blank" rel="noopener">Forrest Coffee</a></h3>
+            <p class="spot-meta">Liberty Hill</p>
+            <p>Fenced in area with a chalkboard, little tables for kids, and plenty of space to run around.</p>
+          </article>
+          <h3 class="area-header" id="area-north-austin">North Austin</h3>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/churchrow-tejas.webp" alt="Churchrow Tejas BBQ" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://churchrowbbq.com/" target="_blank" rel="noopener">Churchrow Tejas BBQ</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Playground with climbing towers.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/the-boat.webp" alt="The Boat" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://theboatatx.com/" target="_blank" rel="noopener">The Boat</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Pirate ship playground on the patio.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/sushi-warriors.webp" alt="Sushi Warriors" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.sushiwarriors.com/" target="_blank" rel="noopener">Sushi Warriors</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Playground with shade sail next to the restaurant.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/austin-beerworks.webp" alt="Austin Beerworks" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://austinbeerworks.com/" target="_blank" rel="noopener">Austin Beerworks</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Brewery with a kid area, turf mounds, and a food truck.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/desi-chinese.webp" alt="Desi Chinese" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://desi-sizzle.vercel.app/" target="_blank" rel="noopener">Desi Chinese</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Indian-Chinese food truck with colorful outdoor picnic tables.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/garbos.webp" alt="Garbo's" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.garboslobsteratx.com/" target="_blank" rel="noopener">Garbo's</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Nautical-themed eatery with a pirate ship playground, known for lobster rolls.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/oz-tap-house.webp" alt="Oz Tap House" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.oztaphouse.com/" target="_blank" rel="noopener">Oz Tap House</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Kid-friendly spot with an outdoor playground.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/slackers-brewing.webp" alt="Slackers Brewing" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.slackersbrewing.com/" target="_blank" rel="noopener">Slackers Brewing</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>A brewery with an inside play area.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/austin-beerworks-sprinkle-valley.webp" alt="Austin Beerworks Sprinkle Valley" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://austinbeerworks.com/" target="_blank" rel="noopener">Austin Beerworks Sprinkle Valley</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>64-acre ranch location with a treehouse playground and disc golf.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/waterloo-ice-house.webp" alt="Waterloo Ice House" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.waterlooicehouse.com/" target="_blank" rel="noopener">Waterloo Ice House</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Burgers and brews with a playscape.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/central-market-north.webp" alt="Central Market" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.centralmarket.com/locations/austin-north-lamar" target="_blank" rel="noopener">Central Market</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Playground by the cafe patio.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/home-slice-north-loop.webp" alt="Home Slice Pizza" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://homeslicepizza.com/location/north-loop/" target="_blank" rel="noopener">Home Slice Pizza</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Turf mounds to climb on the patio.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/honest-marys.webp" alt="Honest Mary's" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://honestmarys.com" target="_blank" rel="noopener">Honest Mary's</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Turf mounds play area.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/mama-bettys.webp" alt="Mama Betty's" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.ilovemamabettys.com/" target="_blank" rel="noopener">Mama Betty's</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Tex-Mex with a big outdoor lawn and plenty of room for kids to run.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/phils-ice-house.webp" alt="Phil's Ice House" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.philsicehouse.com/" target="_blank" rel="noopener">Phil's Ice House</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Burgers and shakes with a big playground. The S. Lamar spot shares space with Amy's Ice Creams.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/aviator-pizza.webp" alt="Aviator Pizza" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.aviatorpizza.com/" target="_blank" rel="noopener">Aviator Pizza</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>We always have a blast.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/old-gregg-brewing.webp" alt="Old Gregg Brewing" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://oldgreggbrewingco.com/" target="_blank" rel="noopener">Old Gregg Brewing</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>Brewery with an outdoor playground, pizza, and tacos.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/prost-alehouse.webp" alt="Prost Alehouse" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://prostalehouse.com/" target="_blank" rel="noopener">Prost Alehouse</a></h3>
+            <p class="spot-meta">North Austin</p>
+            <p>German-style alehouse with a playground right out back.</p>
+          </article>
+          <h3 class="area-header" id="area-central-austin">Central Austin</h3>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/oddwood-brewing.webp" alt="Oddwood Brewing" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.oddwoodales.com" target="_blank" rel="noopener">Oddwood Brewing</a></h3>
+            <p class="spot-meta">Central Austin</p>
+            <p>Brewpub with pizza and a shaded toddler play area.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/stargazer.webp" alt="Stargazer" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.stargazerbar.com/" target="_blank" rel="noopener">Stargazer</a></h3>
+            <p class="spot-meta">Central Austin</p>
+            <p>Coffee by day, cocktails by night, with a rocket-ship playground. 21+ after 5pm.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/st-elmo-springdale.webp" alt="St. Elmo Brewing Company" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://stelmobrewing.com/" target="_blank" rel="noopener">St. Elmo Brewing Company</a></h3>
+            <p class="spot-meta">Central Austin</p>
+            <p>Children's play area, family-friendly taproom.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/bouldin-acres.webp" alt="Bouldin Acres" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.bouldinacres.com/" target="_blank" rel="noopener">Bouldin Acres</a></h3>
+            <p class="spot-meta">Central Austin</p>
+            <p>Kid friendly spot.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/rudys-360.webp" alt="Rudy's Bar-B-Q (360)" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://rudysbbq.com/location/detail/austin-360-tx" target="_blank" rel="noopener">Rudy's Bar-B-Q (360)</a></h3>
+            <p class="spot-meta">Central Austin</p>
+            <p>BBQ with a wooden castle playground.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/littlefields.webp" alt="Littlefield's" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://littlefieldsatx.com/" target="_blank" rel="noopener">Littlefield's</a></h3>
+            <p class="spot-meta">Central Austin</p>
+            <p>Tacos and coffee with an enclosed turf play area for kids.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/lazarus-brewing.webp" alt="Lazarus Brewing Co. Airport Blvd." width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://lazarusbrewing.com/" target="_blank" rel="noopener">Lazarus Brewing Co. Airport Blvd.</a></h3>
+            <p class="spot-meta">Central Austin</p>
+            <p>Brewery and tacos with a teal pirate ship playground.</p>
+          </article>
+          <h3 class="area-header" id="area-south-austin">South Austin</h3>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/bouldin-menchaca.webp" alt="Bouldin Acres (Menchaca)" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.bouldinacres.com/" target="_blank" rel="noopener">Bouldin Acres (Menchaca)</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Second location with a wooden playground.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/the-hive.webp" alt="The Hive" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.hiveaustin.com/" target="_blank" rel="noopener">The Hive</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Playground with a tall spiral slide.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/way-south-food-truck.webp" alt="Way South Food Truck Park" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.waysouthfoodpark.com" target="_blank" rel="noopener">Way South Food Truck Park</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Food truck park with playground and shade sails.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/thicket-food-park.webp" alt="Thicket Food Park" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.thicketaustin.com/" target="_blank" rel="noopener">Thicket Food Park</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Food truck park with a playground.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/southpark-meadows.webp" alt="Southpark Meadows" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.shopsouthparkmeadows.com/" target="_blank" rel="noopener">Southpark Meadows</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Restaurants share a central playground, visible from patios.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/fast-friends-brewing.webp" alt="Fast Friends Beer Company" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://fastfriendsbeer.com/" target="_blank" rel="noopener">Fast Friends Beer Company</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Brewery with a wooden barrel-tunnel playscape for kids.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/moontower-saloon.webp" alt="Moontower Saloon" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://moontowersaloon.com/" target="_blank" rel="noopener">Moontower Saloon</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Bouncy tree nets in the backyard.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/oasthouse.webp" alt="Oasthouse Kitchen + Bar" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://oasthouseaustin.com/" target="_blank" rel="noopener">Oasthouse Kitchen + Bar</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Wooden playground on the patio.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/st-elmo-south.webp" alt="St. Elmo Brewing Company" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://stelmobrewing.com/" target="_blank" rel="noopener">St. Elmo Brewing Company</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Colorful fort play structure.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/easy-tiger.webp" alt="Easy Tiger" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.easytigerusa.com/pages/south-lamar" target="_blank" rel="noopener">Easy Tiger</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Turf play area with tunnels and blocks.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/hattie-bs.webp" alt="Hattie B's Hot Chicken" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://hattieb.com" target="_blank" rel="noopener">Hattie B's Hot Chicken</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Turf area with lawn games.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/waterloo-escarpment.webp" alt="Waterloo Ice House" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.waterlooicehouse.com/" target="_blank" rel="noopener">Waterloo Ice House</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Large patio with kids' playscape.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/nomadic-outpost.webp" alt="Nomadic Outpost" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.nomadicbeergarden.com/" target="_blank" rel="noopener">Nomadic Outpost</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Wooden climbing structures with nets.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/flores-mexican.webp" alt="Flores Mexican Restaurant" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.floresmexican.com/" target="_blank" rel="noopener">Flores Mexican Restaurant</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Playground with slides on turf.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/suds-monkey.webp" alt="Suds Monkey" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://sudsmonkeybrew.com/" target="_blank" rel="noopener">Suds Monkey</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Backyard play area with pizza.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/leona-botanical.webp" alt="Leona Botanical Cafe" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.leonacafebar.com/" target="_blank" rel="noopener">Leona Botanical Cafe</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Natural log climbing structures in a garden setting.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/docs-backyard.webp" alt="Doc's Backyard Grill" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.eatdrinkdocs.com/" target="_blank" rel="noopener">Doc's Backyard Grill</a></h3>
+            <p class="spot-meta">South Austin</p>
+            <p>Burgers and brews with a big kids playscape out back.</p>
+          </article>
+          <h3 class="area-header" id="area-dripping-springs">Dripping Springs</h3>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/dripping-springs-distilling.webp" alt="Dripping Springs Distilling" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.drippingspringsdistilling.com/" target="_blank" rel="noopener">Dripping Springs Distilling</a></h3>
+            <p class="spot-meta">Dripping Springs</p>
+            <p>Distillery with a playground tucked among the oak trees.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/fitzhugh-brewing.webp" alt="Fitzhugh Brewing" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.fitzhughbrewing.com/" target="_blank" rel="noopener">Fitzhugh Brewing</a></h3>
+            <p class="spot-meta">Dripping Springs</p>
+            <p>Huge playscape in a sprawling beer garden.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/ghost-note-brewing.webp" alt="Ghost Note Brewing" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.ghostnotebrewing.com/" target="_blank" rel="noopener">Ghost Note Brewing</a></h3>
+            <p class="spot-meta">Dripping Springs</p>
+            <p>Treehouse playground on 5 acres.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/jester-king.webp" alt="Jester King Brewery" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://jesterkingbrewery.com/" target="_blank" rel="noopener">Jester King Brewery</a></h3>
+            <p class="spot-meta">Dripping Springs</p>
+            <p>Playground, open fields, and goats. Wood-fired pizza on site.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/one-shot-distillery.webp" alt="One Shot Distillery" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.osdtx.com/" target="_blank" rel="noopener">One Shot Distillery</a></h3>
+            <p class="spot-meta">Dripping Springs</p>
+            <p>Veteran-owned distillery and brewery with a playscape for the kids.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/vespa-rossa.webp" alt="Vespa Rossa" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://vesparossatx.com/" target="_blank" rel="noopener">Vespa Rossa</a></h3>
+            <p class="spot-meta">Dripping Springs</p>
+            <p>Outdoor playground by the patio.</p>
+          </article>
+          <h3 class="area-header" id="area-lakeway-area">Lakeway Area</h3>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/farmands-kitchen.webp" alt="Farmand's Kitchen" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://farmandskitchen.com/" target="_blank" rel="noopener">Farmand's Kitchen</a></h3>
+            <p class="spot-meta">Lakeway Area</p>
+            <p>Family-friendly eatery with a playground and patio.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/fired-pizzas.webp" alt="Fired Pizzas" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://firedpizzas.com/" target="_blank" rel="noopener">Fired Pizzas</a></h3>
+            <p class="spot-meta">Lakeway Area</p>
+            <p>Wooden playground with yellow slides.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/craig-os.webp" alt="Craig O's Pizza" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://craigositalian.com/" target="_blank" rel="noopener">Craig O's Pizza</a></h3>
+            <p class="spot-meta">Lakeway Area</p>
+            <p>Fenced playground off the patio.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/sundancer-grill.webp" alt="Sundancer Grill" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.sundancergrill.com/" target="_blank" rel="noopener">Sundancer Grill</a></h3>
+            <p class="spot-meta">Lakeway Area</p>
+            <p>Playground with lake views.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/winston-coffee.webp" alt="Winston's Coffee + Provisions" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://winstonsatx.com/" target="_blank" rel="noopener">Winston's Coffee + Provisions</a></h3>
+            <p class="spot-meta">Lakeway Area</p>
+            <p>White and gray playground with slides.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/rudys-620.webp" alt="Rudy's Bar-B-Q (620)" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://rudysbbq.com/location/detail/austin-620-tx" target="_blank" rel="noopener">Rudy's Bar-B-Q (620)</a></h3>
+            <p class="spot-meta">Lakeway Area</p>
+            <p>BBQ with a wooden castle playground.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/green-mango.webp" alt="Green Mango by Thai Spice" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://greenmangoatx.com/" target="_blank" rel="noopener">Green Mango by Thai Spice</a></h3>
+            <p class="spot-meta">Lakeway Area</p>
+            <p>Rustic wooden playground structures.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/mesa-rosa.webp" alt="Mesa Rosa" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://www.mesarosa.com/" target="_blank" rel="noopener">Mesa Rosa</a></h3>
+            <p class="spot-meta">Lakeway Area</p>
+            <p>Tex-Mex and a good playground.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/angels-ice-house.webp" alt="Angel's Ice House" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://angelsicehouse.com/" target="_blank" rel="noopener">Angel's Ice House</a></h3>
+            <p class="spot-meta">Lakeway Area</p>
+            <p>Playground with slides under shade sails.</p>
+          </article>
+          <h3 class="area-header" id="area-more-areas">More Areas</h3>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/vista-brewing.webp" alt="Vista Brewing" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://vistabrewingtx.com/" target="_blank" rel="noopener">Vista Brewing</a></h3>
+            <p class="spot-meta">More Areas</p>
+            <p>Hill Country brewery with a treehouse playground among the oaks.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/hat-creek-burgers.webp" alt="Hat Creek Burgers" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://hatcreekburgers.com/" target="_blank" rel="noopener">Hat Creek Burgers</a></h3>
+            <p class="spot-meta">More Areas</p>
+            <p>Our favorite kid-friendly burger spot. We love the Domain one.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/progress-coffee-buda.webp" alt="Progress Coffee + Beer" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://progresscoffee.com/" target="_blank" rel="noopener">Progress Coffee + Beer</a></h3>
+            <p class="spot-meta">More Areas</p>
+            <p>Playscape in the beer garden.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/cottonwood-creek.webp" alt="Cottonwood Creek Brewery" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.cottonwoodcreekbrewery.com/" target="_blank" rel="noopener">Cottonwood Creek Brewery</a></h3>
+            <p class="spot-meta">More Areas</p>
+            <p>Brewery with a full-size pirate ship playground and family-friendly patio.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/lucky-rabbit.webp" alt="Lucky Rabbit" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://luckyrabbitbar.com/" target="_blank" rel="noopener">Lucky Rabbit</a></h3>
+            <p class="spot-meta">More Areas</p>
+            <p>Loved for date nights and family outings alike.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/good-luck-grill.webp" alt="Good Luck Grill" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://goodluckgrill.com/" target="_blank" rel="noopener">Good Luck Grill</a></h3>
+            <p class="spot-meta">More Areas</p>
+            <p>Playscape off the sprawling patio.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/save-the-world-brewing.webp" alt="Save The World Brewing Co" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="http://stwbrewing.com/" target="_blank" rel="noopener">Save The World Brewing Co</a></h3>
+            <p class="spot-meta">More Areas</p>
+            <p>Brewery with a wooden tower playscape for kids.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/playground-niederwald.webp" alt="The Playground at Niederwald" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.playgroundniederwald.com/" target="_blank" rel="noopener">The Playground at Niederwald</a></h3>
+            <p class="spot-meta">More Areas</p>
+            <p>Free-entry playground with food trucks and a bar. South of Austin.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/roughhouse-brewing.webp" alt="Roughhouse Brewing" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://www.roughhousebrewing.com/" target="_blank" rel="noopener">Roughhouse Brewing</a></h3>
+            <p class="spot-meta">More Areas</p>
+            <p>Playground in the shady beer garden.</p>
+          </article>
+          <article class="spot">
+            <img class="spot-photo" src="images/austin/bold-republic.webp" alt="Bold Republic Brewing" width="720" height="540" loading="lazy" decoding="async">
+            <h3><a href="https://boldrepublicbrewing.com/" target="_blank" rel="noopener">Bold Republic Brewing</a></h3>
+            <p class="spot-meta">More Areas</p>
+            <p>Full commercial playground, kids eat free Sunday.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="tab-panel" id="travel" role="tabpanel" hidden>
       <div class="shell">
         <div class="page-hero"><p class="kicker">Places we’ve stayed</p><h2>Family getaways we’d happily pack for again.</h2><p>Four stays our family has tried, with the details that mattered most when traveling as a family of five.</p></div>
@@ -285,7 +866,7 @@
       <nav class="footer-nav" aria-label="Site navigation">
         <button type="button" data-tab="home">Home</button>
         <button type="button" data-tab="media-kit">Media kit</button>
-        <button type="button" data-tab="travel">Travel</button>
+        <button type="button" data-tab="eats">Kid-Friendly Eats</button> <button type="button" data-tab="travel">Travel</button>
         <button type="button" data-tab="recipes">Recipes</button>
       </nav>
       <nav class="footer-socials" aria-label="Social media links">
@@ -299,8 +880,114 @@
     </div>
   </footer>
 
+  <script src="vendor/leaflet/leaflet.js"></script>
   <script>
     (function () {
+      var SPOT_DATA = {
+        eats: [
+          {"name": "La Dosis Coffee", "note": "Big bouncy net for kids to jump on.", "lat": 30.51953, "lng": -97.83248},
+          {"name": "Lucky Rabbit", "note": "Loved for date nights and family outings alike.", "lat": 30.49441, "lng": -97.92511},
+          {"name": "Liberty Tavern", "note": "Chicken fried chicken and fried pickles.", "lat": 30.66613, "lng": -97.91875},
+          {"name": "Aviator Pizza", "note": "We always have a blast.", "lat": 30.29812, "lng": -97.70533},
+          {"name": "Hat Creek Burgers (Domain)", "note": "Our favorite kid-friendly spot in the Domain.", "lat": 30.399924, "lng": -97.723318},
+          {"name": "Hat Creek Burgers (Allandale)", "note": "Kid-friendly burgers with a playground.", "lat": 30.328429, "lng": -97.740021},
+          {"name": "Hat Creek Burgers (West Lake Hills)", "note": "Kid-friendly burgers with a playground.", "lat": 30.296002, "lng": -97.826911},
+          {"name": "Hat Creek Burgers (Lakeway)", "note": "Kid-friendly burgers with a playground.", "lat": 30.34628, "lng": -97.9655},
+          {"name": "Hat Creek Burgers (Buda)", "note": "Kid-friendly burgers with a playground.", "lat": 30.08384, "lng": -97.82458},
+          {"name": "Hat Creek Burgers (Dripping Springs)", "note": "Kid-friendly burgers with a playground.", "lat": 30.20505, "lng": -97.97911},
+          {"name": "Hat Creek Burgers (Round Rock)", "note": "Kid-friendly burgers with a playground.", "lat": 30.52841, "lng": -97.62544},
+          {"name": "Hat Creek Burgers (Georgetown)", "note": "Kid-friendly burgers with a playground.", "lat": 30.64387, "lng": -97.67863},
+          {"name": "Phil's Ice House (S. Lamar)", "note": "Burgers and shakes with a big playground.", "lat": 30.243157, "lng": -97.782373},
+          {"name": "Phil's Ice House (Burnet)", "note": "Burgers and shakes with a big playground.", "lat": 30.332176, "lng": -97.740203},
+          {"name": "Phil's Ice House (183)", "note": "Burgers and shakes with a big playground.", "lat": 30.44385, "lng": -97.78442},
+          {"name": "Waterloo Ice House", "note": "Burgers and brews with a playscape.", "lat": 30.360888, "lng": -97.789441},
+          {"name": "The Peached Tortilla", "note": "Asian-Southern fusion with a playscape.", "lat": 30.530686, "lng": -97.798404},
+          {"name": "Fitzhugh Brewing", "note": "Huge playscape in a sprawling beer garden.", "lat": 30.245359, "lng": -98.034373},
+          {"name": "Jester King Brewery", "note": "Playground, open fields, and goats.", "lat": 30.23064, "lng": -97.99921},
+          {"name": "Suds Monkey", "note": "Backyard play area with pizza.", "lat": 30.20921, "lng": -97.97523},
+          {"name": "The All Good", "note": "Fenced turf yard and burger food truck.", "lat": 30.52328, "lng": -97.82471},
+          {"name": "The Fieldhouse at the Crossover", "note": "Playground, pickleball, volleyball, food trucks.", "lat": 30.547367, "lng": -97.81408},
+          {"name": "Mama Betty's (Parmer)", "note": "Tex-Mex with a big lawn for kids to run.", "lat": 30.487179, "lng": -97.769906},
+          {"name": "Mama Betty's (Burnet)", "note": "Tex-Mex with a big lawn for kids to run.", "lat": 30.346644, "lng": -97.736274},
+          {"name": "Slackers Brewing", "note": "A brewery with an inside play area.", "lat": 30.46228, "lng": -97.81475},
+          {"name": "Mesa Rosa", "note": "Tex-Mex and a good playground.", "lat": 30.48363, "lng": -97.73455},
+          {"name": "Oz Tap House", "note": "Kid-friendly spot with an outdoor playground.", "lat": 30.3931, "lng": -97.84407},
+          {"name": "Family Barn", "note": "Coffee while your kiddos play.", "lat": 30.61882, "lng": -97.694898},
+          {"name": "The Good Lot", "note": "Beer garden with food trucks and a kids play area.", "lat": 30.52365, "lng": -97.86487},
+          {"name": "Bouldin Acres", "note": "Kid friendly spot.", "lat": 30.24823, "lng": -97.7687},
+          {"name": "Nameless Saloon", "note": "Pickleball, food trucks, and live music.", "lat": 30.532571, "lng": -97.935969},
+          {"name": "Backporch Social", "note": "Family-friendly bar with lawn games and big screens.", "lat": 30.508464, "lng": -97.682043},
+          {"name": "Garbo's", "note": "Pirate ship playground and lobster rolls.", "lat": 30.42357, "lng": -97.701961},
+          {"name": "Taqueria Mi Ranchito Jaimes / Thirsty Penguin", "note": "Taqueria with a playground, outdoor eating area, food truck, and daiquiri drive-thru.", "lat": 30.67462, "lng": -97.92597},
+          {"name": "Mandola's Italian Kitchen", "note": "Italian with a playground by the patio.", "lat": 30.52187, "lng": -97.77333},
+          {"name": "Doc's Backyard Grill", "note": "Burgers and brews with a kids playscape.", "lat": 30.2314, "lng": -97.81859},
+          {"name": "Liberty Hill Beer Market", "note": "Beer garden with a playground and live music.", "lat": 30.668632, "lng": -97.913053},
+          {"name": "Forrest Coffee", "note": "Fenced in area with a chalkboard, little tables for kids, and plenty of space to run around.", "lat": 30.665, "lng": -97.925},
+          {"name": "Winston's Coffee + Provisions", "note": "White and gray playground with slides.", "lat": 30.304, "lng": -97.95},
+          {"name": "Angel's Ice House", "note": "Playground with slides under shade sails.", "lat": 30.41, "lng": -98.15},
+          {"name": "Agape BBQ", "note": "Backyard BBQ with a sandbox and live music.", "lat": 30.663848, "lng": -97.927076},
+          {"name": "Dahlia Cafe", "note": "Homestyle cooking with a playground.", "lat": 30.66858, "lng": -97.91037},
+          {"name": "Leander Trucking Company", "note": "Food truck park with a playground.", "lat": 30.555931, "lng": -97.858566},
+          {"name": "Desi Chinese", "note": "Indian-Chinese food truck with outdoor seating.", "lat": 30.460271, "lng": -97.794782},
+          {"name": "Littlefield's", "note": "Tacos and coffee with a turf play area.", "lat": 30.292829, "lng": -97.76058},
+          {"name": "Cedar Pork (Brushy Creek Food Park)", "note": "BBQ and tacos with room for kids to run.", "lat": 30.508955, "lng": -97.785139},
+          {"name": "One Shot Distillery", "note": "Distillery and brewery with a playscape.", "lat": 30.250581, "lng": -98.0569},
+          {"name": "Austin Beerworks", "note": "Brewery with a kid area and food truck.", "lat": 30.379547, "lng": -97.729789},
+          {"name": "Austin Beerworks Sprinkle Valley", "note": "Ranch location with treehouse playground.", "lat": 30.344315, "lng": -97.647155},
+          {"name": "Lazarus Brewing Co. Airport Blvd.", "note": "Brewery with a pirate ship playground.", "lat": 30.308087, "lng": -97.715308},
+          {"name": "Farmand's Kitchen", "note": "Family eatery with playground and patio.", "lat": 30.387917, "lng": -97.883585},
+          {"name": "Vista Brewing", "note": "Hill Country brewery with treehouse playground.", "lat": 30.104853, "lng": -98.021747},
+          {"name": "Old Gregg Brewing", "note": "Brewery with outdoor playground.", "lat": 30.402102, "lng": -97.633905},
+          {"name": "Oddwood Brewing", "note": "Brewpub with shaded toddler play area.", "lat": 30.286697, "lng": -97.705317},
+          {"name": "The Playground at Niederwald", "note": "Free playground with food trucks.", "lat": 30.023791, "lng": -97.74669},
+          {"name": "Cottonwood Creek Brewery", "note": "Full-size pirate ship playground.", "lat": 30.542131, "lng": -97.559348},
+          {"name": "Prost Alehouse", "note": "Playground with slides.", "lat": 30.440354, "lng": -97.619819},
+          {"name": "Fast Friends Beer Company", "note": "Wooden barrel-tunnel playscape.", "lat": 30.18164, "lng": -97.77543},
+          {"name": "Dripping Springs Distilling", "note": "Playground among the oaks.", "lat": 30.205971, "lng": -98.119084},
+          {"name": "Save The World Brewing Co", "note": "Wooden tower playscape.", "lat": 30.616789, "lng": -98.26372},
+          {"name": "Stargazer", "note": "Rocket-ship playground; 21+ after 5pm.", "lat": 30.262734, "lng": -97.696171},
+          {"name": "Tasty Trails", "note": "Food truck park with playground.", "lat": 30.630587, "lng": -97.744986},
+          {"name": "McDonald's (Leander)", "note": "Indoor PlayPlace with seating.", "lat": 30.56028, "lng": -97.84573},
+          {"name": "Southpark Meadows", "note": "Restaurants share a central playground, visible from patios.", "lat": 30.16323, "lng": -97.7933},
+          {"name": "Thicket Food Park", "note": "Food truck park with a playground.", "lat": 30.185356, "lng": -97.79184},
+          {"name": "Way South Food Truck Park", "note": "Food truck park with playground and shade sails.", "lat": 30.140973, "lng": -97.803133},
+          {"name": "The Hive", "note": "Playground with a tall spiral slide.", "lat": 30.165358, "lng": -97.829519},
+          {"name": "Leona Botanical Cafe", "note": "Natural log climbing structures in a garden setting.", "lat": 30.21758, "lng": -97.826},
+          {"name": "Easy Tiger", "note": "Turf play area with tunnels and blocks.", "lat": 30.240155, "lng": -97.788662},
+          {"name": "Flores Mexican Restaurant", "note": "Playground with slides on turf.", "lat": 30.222995, "lng": -97.842731},
+          {"name": "Nomadic Outpost", "note": "Wooden climbing structures with nets.", "lat": 30.22143, "lng": -97.826486},
+          {"name": "Sushi Warriors", "note": "Playground with shade sail next to the restaurant.", "lat": 30.31435, "lng": -97.73278},
+          {"name": "The Boat", "note": "Pirate ship playground on the patio.", "lat": 30.39769, "lng": -97.7334},
+          {"name": "Churchrow Tejas BBQ", "note": "Playground with climbing towers.", "lat": 30.35196, "lng": -97.72289},
+          {"name": "Fired Pizzas", "note": "Wooden playground with yellow slides.", "lat": 30.22479, "lng": -97.95329},
+          {"name": "Green Mango by Thai Spice", "note": "Rustic wooden playground structures.", "lat": 30.41867, "lng": -97.84625},
+          {"name": "Rudy's Bar-B-Q (620)", "note": "BBQ with a wooden castle playground.", "lat": 30.4106, "lng": -97.84974},
+          {"name": "Rudy's Bar-B-Q (360)", "note": "BBQ with a wooden castle playground.", "lat": 30.26341, "lng": -97.8158},
+          {"name": "Bouldin Acres (Menchaca)", "note": "Second location with a wooden playground.", "lat": 30.16711, "lng": -97.82764}
+        ]
+      };
+      var spotMaps = {};
+      function escapeHtml(text) {
+        return String(text).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
+      }
+      function initSpotMap(key) {
+        if (spotMaps[key]) return spotMaps[key];
+        var el = document.getElementById('map-' + key);
+        if (!el || typeof L === 'undefined') return null;
+        var map = L.map(el, { scrollWheelZoom: false });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
+        var bounds = [];
+        SPOT_DATA[key].forEach(function (s) {
+          if (typeof s.lat !== 'number') return;
+          L.circleMarker([s.lat, s.lng], { radius: 8, color: '#9C463C', weight: 2, fillColor: '#B96A5C', fillOpacity: 0.9 }).bindPopup('<strong>' + escapeHtml(s.name) + '</strong><br>' + escapeHtml(s.note)).addTo(map);
+          bounds.push([s.lat, s.lng]);
+        });
+        if (bounds.length > 1) map.fitBounds(bounds, { padding: [36, 36] });
+        else if (bounds.length === 1) map.setView(bounds[0], 13);
+        spotMaps[key] = map;
+        return map;
+      }
+
       /* Keep the final two words of plain-text copy together at every viewport. */
       Array.prototype.forEach.call(document.querySelectorAll('p, .main-link > span > span, .brand > span:last-child, .stay-copy > span'), function (element) {
         if (element.childElementCount) return;
@@ -319,6 +1006,7 @@
           if (active && moveFocus) tab.focus();
         });
         panels.forEach(function (panel) { panel.hidden = panel.id !== id; });
+        if (SPOT_DATA[id]) { var spotMap = initSpotMap(id); if (spotMap) setTimeout(function () { spotMap.invalidateSize(); }, 60); }
         if (window.history && window.history.replaceState) window.history.replaceState(null, '', '#' + id);
         window.scrollTo({ top: 0, behavior: 'auto' });
       }
@@ -341,7 +1029,10 @@
       });
 
       var initial = window.location.hash.slice(1);
+      var target = initial && document.getElementById(initial);
+      var targetPanel = target && target.closest('.tab-panel');
       if (panels.some(function (panel) { return panel.id === initial; })) showTab(initial, false);
+      else if (targetPanel) { showTab(targetPanel.id, false); window.history.replaceState(null, '', '#' + initial); target.scrollIntoView(); }
       else showTab('home', false);
 
       var newsletterForm = document.getElementById('newsletter-form');
